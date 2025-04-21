@@ -1,0 +1,23 @@
+# Ignore client secret file
+client_secret.json
+
+# Ignore environment files
+.env
+
+# Ignore Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
