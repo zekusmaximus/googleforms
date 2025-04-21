@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Google Forms Multi-Language Tool</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Google Forms Multi-Language Tool</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+        <h1 class="mb-4">Dashboard</h1>
+        
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h4>Process Form Responses</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/process">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="form-group">
+                        <label>{{ form.english_form_id.label }}</label>
+                        {{ form.english_form_id(class="form-control", placeholder="Enter the Form ID for your English form") }}
+                        <small class="form-text text-muted">The Form ID can be found in the URL of your Google Form: https://docs.google.com/forms/d/e/&lt;FORM_ID&gt;/viewform</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>{{ form.spanish_form_id.label }}</label>
+                        {{ form.spanish_form_id(class="form-control", placeholder="Enter the Form ID for your Spanish form") }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>{{ form.polish_form_id.label }}</label>
+                        {{ form.polish_form_id(class="form-control", placeholder="Enter the Form ID for your Polish form") }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>{{ form.report_title.label }}</label>
+                        {{ form.report_title(class="form-control") }}
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <h5>Important Notes:</h5>
+                        <ul>
+                            <li>All three forms should have identical structure (same questions in different languages)</li>
+                            <li>Processing may take a few minutes depending on the number of responses</li>
+                            <li>Make sure your forms have response collection enabled and linked to Google Sheets</li>
+                        </ul>
+                    </div>
+                    
+                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                </form>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header bg-light">
+                <h4>How to Find Your Form ID</h4>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Open your Google Form in a web browser</li>
+                    <li>Look at the URL in the address bar, which will look something like:<br>
+                        <code>https://docs.google.com/forms/d/e/1FAIpQLSdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/viewform</code></li>
+                    <li>The Form ID is the long string between <code>/e/</code> and <code>/viewform</code></li>
+                    <li>Copy this ID and paste it into the appropriate field above</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Google Forms Multi-Language Tool</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

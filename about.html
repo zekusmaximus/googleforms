@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Google Forms Multi-Language Tool</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Google Forms Multi-Language Tool</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    {% if authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+        <h1 class="mb-4">About This Tool</h1>
+        
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h4>Purpose</h4>
+            </div>
+            <div class="card-body">
+                <p>The Google Forms Multi-Language Tool is designed to help researchers, educators, and organizations who collect survey data in multiple languages. It solves the common challenge of analyzing responses across language barriers by:</p>
+                <ul>
+                    <li>Retrieving responses from identical forms in different languages</li>
+                    <li>Automatically translating non-English responses to English</li>
+                    <li>Combining all responses into a unified dataset</li>
+                    <li>Generating comprehensive reports with visualizations and insights</li>
+                </ul>
+                <p>This tool is particularly useful for international research, multilingual customer feedback, and global education initiatives.</p>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h4>Features</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Data Collection</h5>
+                        <ul>
+                            <li>OAuth 2.0 authentication with Google</li>
+                            <li>Support for English, Spanish, and Polish forms</li>
+                            <li>Secure access to Google Forms and Sheets</li>
+                            <li>Weekly refresh capability for ongoing surveys</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Translation & Processing</h5>
+                        <ul>
+                            <li>Automatic translation using Google Translate API</li>
+                            <li>Preservation of original responses alongside translations</li>
+                            <li>Intelligent data aggregation across forms</li>
+                            <li>Consistent data structure maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h5>Analysis & Visualization</h5>
+                        <ul>
+                            <li>Response distribution by language</li>
+                            <li>Temporal analysis of submission patterns</li>
+                            <li>Thematic analysis of open-ended responses</li>
+                            <li>Cross-question correlation analysis</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Reporting & Sharing</h5>
+                        <ul>
+                            <li>Interactive HTML reports</li>
+                            <li>Downloadable PDF documents</li>
+                            <li>Shareable web links with optional expiration</li>
+                            <li>Complete data package downloads</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h4>How to Use</h4>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li><strong>Prepare Your Forms:</strong> Create identical Google Forms in each language (English, Spanish, Polish)</li>
+                    <li><strong>Enable Response Collection:</strong> Make sure each form saves responses to Google Sheets</li>
+                    <li><strong>Login:</strong> Authenticate with your Google account</li>
+                    <li><strong>Enter Form IDs:</strong> Provide the Form IDs for each language version</li>
+                    <li><strong>Process:</strong> Let the tool retrieve, translate, and analyze the responses</li>
+                    <li><strong>Review:</strong> Explore the generated report with visualizations and insights</li>
+                    <li><strong>Share:</strong> Download the report as PDF or share via web link</li>
+                    <li><strong>Update:</strong> Return weekly to refresh the report with new responses</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header bg-light">
+                <h4>Privacy & Security</h4>
+            </div>
+            <div class="card-body">
+                <p>This tool prioritizes the security and privacy of your data:</p>
+                <ul>
+                    <li>OAuth 2.0 authentication ensures secure access to your Google account</li>
+                    <li>The tool only requests the minimum permissions needed to access your forms and responses</li>
+                    <li>No form data is stored permanently on our servers</li>
+                    <li>Reports are generated on-demand and can be deleted at any time</li>
+                    <li>Shareable links can be set with expiration dates for temporary access</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Google Forms Multi-Language Tool</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

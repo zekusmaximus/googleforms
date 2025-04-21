@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Forms Multi-Language Tool</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <style>
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 2rem;
+        }
+        .feature-box {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: #fff;
+            border-radius: 0.25rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Google Forms Multi-Language Tool</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    {% if authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Google Forms Multi-Language Tool</h1>
+            <p class="lead">Retrieve, translate, and analyze responses from forms in multiple languages</p>
+            {% if authenticated %}
+            <a href="/dashboard" class="btn btn-primary btn-lg">Go to Dashboard</a>
+            {% else %}
+            <a href="/login" class="btn btn-primary btn-lg">Login with Google</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Multi-Language Support</h3>
+                    <p>Retrieve responses from forms in English, Spanish, and Polish, with automatic translation.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon">📊</div>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Generate detailed reports with visualizations, trends, and thematic analysis.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon">📤</div>
+                    <h3>Multiple Output Formats</h3>
+                    <p>Download reports as PDFs or share them via web links for easy collaboration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h4>How It Works</h4>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            <li class="mb-3">Login with your Google account to securely access your forms</li>
+                            <li class="mb-3">Enter the IDs of your three language-specific forms (English, Spanish, Polish)</li>
+                            <li class="mb-3">Our tool retrieves all responses and translates non-English content</li>
+                            <li class="mb-3">Responses are combined into a unified dataset for comprehensive analysis</li>
+                            <li class="mb-3">Visualizations and insights are automatically generated</li>
+                            <li>Download the report as a PDF or share it via a web link</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Google Forms Multi-Language Tool</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
